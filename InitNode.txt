@@ -1,0 +1,4 @@
+//Para instalar Node descargas el comprimido, extraes, colocas la carpeta en la raiz del usuario entras a la carpeta desde la terminal y corres el siguiente comando.
+
+sudo cp -r node/{bin,include,lib,share} /usr/
+
