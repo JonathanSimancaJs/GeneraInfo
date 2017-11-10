@@ -1,0 +1,166 @@
+//Abrir la consola de comandos 
+CTRL ALT T
+
+//Ver la información de un comando
+man + comando
+
+//Ver la ruta donde me encuentro
+pwd
+
+//Listar elementos
+ls
+ls -l :Mas informacioń
+
+//Cambiar de directorio
+cd
+cd .. directorio atras
+cd ../.. retroceder dos niveles
+
+//Ver particiones y tamaños en disco
+df
+
+//Ver la memoria
+fee
+
+//Crear carpeta
+mkdir
+
+//Crear un archivo vacio
+touch
+
+//Copiar archivo
+cp nombrearchivo + ruta
+
+//Mover archivo
+mv nombrearchivo + ruta
+
+//Eliminar archivo
+rm 
+rm ruta + nombrearchivo
+
+//Cambiar permisos
+sudo chmod + Digittos
+            700 Todos los permisos
+            775 Permisos normales
+sudo chmod a+x + nombre archivo : Otra forma eligiendo grupos(u g o)
+
+sudo chmod -R + ruta : Para cambiar permisos de muchos archivos dentro de un folder
+
+//Ingresar como super usuario para terner todos los permisos
+sudo su
+se sale con: exit
+sudo passwd root : cambiar contraseña del root
+
+//Que usuario estoy usando
+whoami
+
+//Crear acceso directo o link simbolico
+ln -s /rutaorigen/ /rutadestino/
+
+//Editor de texto
+nano nombrearchivo Otros edtores(Vimm , Emmacs)
+export EDITOR="nano" // Cambiar el editor predeterminado
+
+//Instalador de paquetes 
+sudo apt install
+sudo apt update
+sudo apt upgrade
+sudo apt remove
+sudo apt remove --purge //Eliminar todos los archivos de configuración
+sudo apt help
+
+//Instalador de paquetes .deb
+sudo dpkg -i nombrearchivo
+Nota:Ver donde estan instalado los paquetes con cd /opt
+sudo dpkg -r nombrearchivo
+
+//Instalar paquetes .rmp Es nescesario convertirlos se pude usar alien que es un
+convertidor de paquetes de linux, el comando para convertir es:
+sudo alien nombredelpaquete
+
+//Instalar .run primero hay que verificar permisos y si no tiene cambiarselos
+sudo chmod +x nombrepaquete
+Para instalar:sudo ./nombrepaquete
+
+//Complilar codigo fuente, generalmente vienen comprimidos en carpetas para descomprimir:
+tar -xvf nombrearchivo
+Despues de descomprimir se entra a la carpeta descomrpimida y buscamos el archivo de configuración. configure, conf
+./ nombrearchivo        //Para configurar la instalación
+make                    //Para preparar la instalacion
+sudo make install       //Para instalar
+
+//Instalar o Ejecutar .sh son archvos de script de Linux, es probable que haya que darle parmisos.
+bash nombredearchivo
+
+//Archivos .bin
+./nombrearchivo
+
+//Verificar recursos utilzados por el sistema
+top
+
+//Matar procesos
+kill //mas el pid
+
+//Manipular procesos
+ps
+pstree
+
+//Crear tareas
+*m corresponde al minuto en que se va a ejecutar el script, el valor va de 0 a 59
+
+*h la hora exacta, se maneja el formato de 24 horas, los valores van de 0 a 23, siendo 0 las 12:00 de la medianoche.
+
+*dom hace referencia al día del mes, por ejemplo se puede especificar 15 si se quiere ejecutar cada dia 15
+
+*dow significa el día de la semana, puede ser numérico (0 a 7, donde 0 y 7 son domingo) o las 3 primeras letras del día en inglés: mon, tue, wed, thu, fri, sat, sun.
+
+*user define el usuario que va a ejecutar el comando, puede ser root, u otro usuario diferente siempre y cuando tenga permisos de ejecución del script.
+
+*command refiere al comando o a la ruta absoluta del script a ejecutar, ejemplo: /home/usuario/scripts/actualizar.sh, si acaso llama a un script este debe ser ejecutable
+
+* = todos
+
+m h dom mon down command
+
+crontab -e //Crear tarea
+crontab -l //Listar tareas
+crontab -r //Eliminar tareas del usuario
+
+
+Ejemplo:00 10 * * 0 root apt-get -y update Usuario root
+
+Ejecutará una actualización todos los domingos a las 10:00 a.m
+
+//Apagar el PC
+
+shutdown
+shutdown -c //Cancela
+init 0
+reboot
+
+//Pipe es una opcion que te permite utilizar combinación de comandos. Ejemplo para buscar archivos o contenidos en archivos.
+ls | sort
+ls | grep palabraabuscar
+cat archivo | grep -i palabraabuscar | sort
+
+//Shell scripting basico
+
+Se crea un archivo de texto y se guarda con la extensión .sh
+
+La sintaxis basica es:
+
+#!/bin/bash 
+
+echo "Hola mundo";
+
+luego se ejecuta el archivo como ./nombre o bash nombre
+
+Otro ejemplo.
+
+#!/bin/bash
+
+touch archivo.txt;
+mkdir hello;
+sudo chmod a+x archivo.txt;
+echo "Instrucción completada";
+
