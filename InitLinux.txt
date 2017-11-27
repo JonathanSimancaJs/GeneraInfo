@@ -164,3 +164,6 @@ mkdir hello;
 sudo chmod a+x archivo.txt;
 echo "Instrucción completada";
 
+//Modify menu bar of Ubuntu
+gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+gsettings set com.canonical.Unity.Launcher launcher-position Left
