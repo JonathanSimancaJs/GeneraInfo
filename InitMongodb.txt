@@ -1,0 +1,59 @@
+//Manipular servicio de mongodb
+sudo service mongod start
+sudo service mongod stop
+sudo service mongod restart
+
+//Entrar a la consola
+mongo
+
+//Mosrar bases de datos
+show databases;
+
+//Usar una base de datos
+use nombredb;
+
+//Ver que base de datos estoy usando
+db
+
+//Crear una colección
+db.createCollection("Nombre",{
+    validator:{
+        [
+            {nombre: {$type: "string"}},
+            {nombre: {$type: "string"}}
+        ]
+    }
+})
+
+//Insertar dato en una colección
+db.nombrecoleccion.insert(datosainsertar)
+tambien se le puede pasar arreblos insert([datos1,datos2])
+
+
+//Seleccionar todos los elementos de una colección
+db.nombecoleccion.find()
+
+//Encontrar primero documento de la colección
+findOne()
+
+//Encontrar un documeento en especifico
+find({criterios, criterios})
+find({edad:{"ne:22}})
+
+//Actualizar documento
+save(datos)
+update({valor:atributo},datoaactualizaroagregar)
+update({nombre."Test"},{$set: {nombre:"nuevovalor"}},{multi:true}) // Modificarvarioscampos con el mismo valor
+
+//Eliminar datos
+remove({valor:atributo}) ->remueve la busqueda especifica
+remove({}) -> remueve todos los datos en una colección.
+drop() -> elimina todas las colecciones.
+db.dropDatabase() -> Elimina la base de datos seleccionada actualmente.
+
+//Operadores de busqueda.
+$gt     Mayor que
+$gte    mayor o igual que
+$lt     menor que
+$lte    menor o igualque
+
