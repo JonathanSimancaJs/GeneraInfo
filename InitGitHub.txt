@@ -1,8 +1,8 @@
 
-//Instalación
+//InstalaciÃ³n
 sudo apt-get -y install git
 
-//Configuración de usuario
+//ConfiguraciÃ³n de usuario
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
@@ -14,9 +14,12 @@ git commit -m "first commit"
 git remote add origin https://github.com/JonathanSimancaJs/CoursePhpFirstPage.git
 git push -u origin master
 
-//Cómo eliminar un repositorio de Git creado con 'git init' en un directorio
+//CÃ³mo eliminar un repositorio de Git creado con 'git init' en un directorio
 rm -rf .git
 
 //Dar permiso a untracked files
 git add -A
 
+//Ver commits
+git log
+git log --oneline
